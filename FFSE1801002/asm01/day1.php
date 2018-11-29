@@ -54,6 +54,7 @@
                     echo "<td>Phương trình có nghiệm</td>";
                 }
                 echo "<td class='del' onclick='remove(this)'>xóa</td>";
+                // echo "<td class='del' onclick='this.parentElement.remove()'>xóa</td>";
                 echo "</tr>";
             }
         ?>
