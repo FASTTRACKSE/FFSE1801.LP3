@@ -41,7 +41,7 @@
             <th class="mot">TT</th>
             <th class="hai">a</th>
             <th class="ba">b</th>
-            <th class="nam">x</th>
+            <th class="ba">x</th>
             <th class="nam">Ghi chú</th>
         </tr>
         <?php
