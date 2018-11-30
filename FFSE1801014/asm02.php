@@ -142,7 +142,7 @@
         echo "là học sinh có điểm số trung bình cao nhất! </h1>";
     ?>
     <!-- form sort -->
-    <form action='phpday3.php' method='get'>
+    <form action='asm02.php' method='get'>
         <select name="sort" id="name">
             <option value="up" <?php if($_REQUEST['sort']=='up'){echo "selected=\"selected\"";} ?>>up</option>
             <option value="down" <?php if ($_REQUEST['sort'] == 'down') {echo "selected=\"selected\"";}?>>down</option>            
