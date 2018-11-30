@@ -59,7 +59,7 @@ for ($i=0; $i <count($a) ; $i++) {
 	<td class="left"><?php echo$i; ?></td>
 	<td class="right"><?php echo $a[$i]; ?></td>
 	<td class="right"><?php echo $b[$i]; ?></td>	
-	<td class="right"><?php echo $x[$i]; ?></td>
+	<td class="right"><?php echo round($x[$i],2); ?></td>
 	<td class="right"><?php echo $tb[$i]; ?></td>
 	</tr>
 
