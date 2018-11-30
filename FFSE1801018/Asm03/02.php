@@ -56,8 +56,8 @@
 		<th class="right">Tổng Tiền</th>
 
 	</tr>
-<?php foreach($_SESSION['ds_gh'] as $sinhvien){ 
-	$tongtien=0;
+<?php $tongtien=0; foreach($_SESSION['ds_gh'] as $sinhvien){ 
+	
 	$thanhtien=$sinhvien['soluong']*$sinhvien['dongia'];
 
 	$tongtien= $tongtien+$thanhtien;	?>
