@@ -9,14 +9,17 @@
 <body>
     <?php
         session_start();
-        // session_destroy();
 		if(isset($_POST['submit'])){
 			$data=array(
 					'tenhoa'=>$_POST['tenhoa'],
                     'soluong'=>$_POST['soluong'],
                     'gia'=>$_POST['gia']
 			);
-			$_SESSION['ds'][$_POST['id']]=$data;
+            if(isset($_SESSION['ds'][$_POST['id']])){
+                $_SESSION['ds'][$_POST['id']]['soluong']+=$_POST['soluong'];
+            }else{
+                $_SESSION['ds'][$_POST['id']]=$data;
+            }
 		}
     ?>
     <h1>Giỏ hàng</h1>
