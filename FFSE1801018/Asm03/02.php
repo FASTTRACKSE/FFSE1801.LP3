@@ -30,7 +30,7 @@
 <table>
 	<?php
 		session_start();
-		
+	
 
 		if(isset($_POST['buy'])){
 			$data=array(
@@ -45,9 +45,7 @@
 		}
 
 	 ?>
-	 <pre>
-	 	<?php print_r($_SESSION['ds_gh']) ?>
-	 </pre>
+
 	<tr>
 		<th class="left">Tên Sản Phẩm</th>
 		
@@ -78,5 +76,13 @@
 </table>
 
 <a href="01.php">Cumback</a>
+<form method="POST">
+	<input type="submit" name="xoa" value="Xoa">
+
+</form>
+<?php if (isset($_POST['xoa'])) {
+	session_destroy();
+	header("location: 01.php");
+} ?>
 </body>
 </html>
