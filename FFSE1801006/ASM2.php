@@ -36,7 +36,7 @@
             echo "<script> parent.postMessage(location.pathname+location.search,'http://127.0.0.1:5500');</script>";
 
             $danhsach = array(
-                "nam" => array(
+                array(
                     "stt" => 1,
                     "ten" => "Trần Nguyễn Nhật Nam",
                     "toan" => 9,
@@ -45,7 +45,7 @@
                     
                 ),
 
-                "nhi" => array(
+                array(
                     "stt" => 2,
                     "ten" => "Bùi Ngọc Quỳnh Nhi",
                     "toan" => 7,
@@ -54,7 +54,7 @@
                     
                 ),
 
-                "mai" => array(
+                array(
                     "stt" => 3,
                     "ten" => "Nguyễn Hoàng Thanh Mai",
                     "toan" => 8.5,
@@ -63,7 +63,7 @@
                     
                 ),
 
-                "minh" => array(
+                array(
                     "stt" => 4,
                     "ten" => "Trần Thị Thu Minh",
                     "toan" => 6.5,
@@ -72,7 +72,7 @@
                     
                 ),
 
-                "thao" => array(
+                array(
                     "stt" => 5,
                     "ten" => "Nguyễn Thị Nguyên Thảo",
                     "toan" => 4,
@@ -84,46 +84,48 @@
 
             $tb = array();
 
-            foreach ($danhsach as $hocsinh) {
+            foreach ($danhsach as $keyhs => $hocsinh) {
                 $tb[] = ($hocsinh['toan']+$hocsinh['ly']+$hocsinh['hoa'])/3;
                 
             };
-            foreach ($tb as $diem) {
-                if ($diem<5) { ?>
-                    <tr style="color: red">
-                    <td><?=$hocsinh['stt']?></td>
-                    <td><?=$hocsinh['ten']?></td>
-                    <td><?=$hocsinh['toan']?></td>
-                    <td><?=$hocsinh['ly']?></td>
-                    <td><?=$hocsinh['hoa']?></td>
-                    <td><?=round($diem,2)?></td>
-                    <td>Loại yếu</td>
-                    </tr>
-                    <?php  
-                    break;
-                } else { ?>
-                    <tr>
-                    <td><?=$hocsinh['stt']?></td>
-                    <td><?=$hocsinh['ten']?></td>
-                    <td><?=$hocsinh['toan']?></td>
-                    <td><?=$hocsinh['ly']?></td>
-                    <td><?=$hocsinh['hoa']?></td>
-                    <td><?=round($diem,2)?></td>
-                    <?php
-                    if (($diem>5) && ($diem<=7)) { ?>
-                        <td>Loại trung bình</td> <?php
-                    } else if (($diem>7) && ($diem<=8.5)) { ?>
-                        <td>Loại khá</td> <?php
-                    } else if ($diem>8.5) { ?>
-                        <td>Loại giỏi</td> <?php
-                    }; ?>
-                    </tr>
-                    <?php    
-                };
-                
-            };
-            
+
+            rsort($tb);
+
+            foreach ($tb as $keydiem => $diem) {
+                foreach ($danhsach as $keyhs => $hocsinh) {
+                    if ($keydiem == $keyhs) {
+                        if ($diem<5) { 
+                            $xeploai = "Loại yếu" ; 
+                        } else if (($diem>5) && ($diem<=7)) {
+                            $xeploai = "Lọai trung bình";
+                        } else if (($diem>7) && ($diem<=8.5)) {
+                            $xeploai = "Loại khá";
+                        } else if ($diem>8.5) { 
+                            $xeploai = "Loại giỏi";
+                        }; ?>
+                            <tr <?php if ($diem<5) { echo 'style = "color: red;"'; } ?> >
+                            <td><?=$hocsinh['stt']?></td>
+                            <td><?=$hocsinh['ten']?></td>
+                            <td><?=$hocsinh['toan']?></td>
+                            <td><?=$hocsinh['ly']?></td>
+                            <td><?=$hocsinh['hoa']?></td>
+                            <td><?=round($diem,2)?></td>
+                            <td><?=$xeploai?></td>
+                            </tr>
+                        <?php    
+                    };
+                 };
+            }; 
         ?>
+        <br>
+        
     </table>
+    <p>Bạn <strong><?=$danhsach[0]['ten']?></strong> có điểm trung bình cao nhất là: <strong><?=$tb[0]?></strong> </p>
 </body>
 </html>
+
+
+
+
+
+
