@@ -1,48 +1,9 @@
 <?php session_start();
 
 // Nếu click vào nút Lưu Session
-	if (isset($_POST['addToCart']))
-	{	
-		if (!isset($_SESSION['indicator'])){
-		echo "lan dau <br>";
-
-		$x=0;
-
-		if(!isset($_SESSION['cart'])){
-			// Lưu Session
-			$_SESSION['cart'] = array();
-			$cart_size=0;
-		}
-		else {
-			$cart_size=count($_SESSION['cart']);	
-			for ($i=0;$i<$cart_size;$i++){
-				if($_SESSION['cart'][$i]['0']==$_POST['id']){
-					$_SESSION['cart'][$i]['2']+=$_POST['quantity'];
-					$x=1;
-					break;
-				}
-				// echo $i."=>".$_SESSION['cart'][$i]['1']."<br>"; 
-			}
-		}
-		
-		
-		echo "x=".$x."<br>";
-		// Lưu Session
-		if ($x==0){
-			array_push($_SESSION['cart'],[$_POST['id'],$_POST['name'],$_POST['quantity'],$_POST['price']]);
-			$cart_size++;
-		};
-		
-		echo $cart_size;
-		$_SESSION['cart_size']=$cart_size;
-		$_SESSION['indicator']="passed";
-	} else {
-		echo "lan 2";
-		$cart_size=$_SESSION['cart_size'];
-		echo $cart_size;
-
-	}
-	}
+	
+	$cart_size=count($_SESSION['cart']);
+	echo $cart_size;
 	
 	if (isset($_POST['update'])){
 		echo "Da cap nhat <br>";
@@ -57,8 +18,7 @@
 		}
 			
 
-		$cart_size=count($_SESSION['cart']);
-		echo $cart_size;
+		
 	}
 ?>
 

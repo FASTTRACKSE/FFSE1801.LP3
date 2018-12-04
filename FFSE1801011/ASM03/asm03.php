@@ -1,6 +1,43 @@
 <?php session_start();
-	unset($_SESSION['indicator']);
+	// unset($_SESSION['indicator']);
 	// var_dump($_SESSION['indicator'])
+
+	if (isset($_POST['addToCart']))
+	{	
+
+		$x=0;
+
+		if(!isset($_SESSION['cart'])){
+			// Lưu Session
+			$_SESSION['cart'] = array();
+			$cart_size=0;
+		}
+		else {
+			$cart_size=count($_SESSION['cart']);	
+			for ($i=0;$i<$cart_size;$i++){
+				if($_SESSION['cart'][$i]['0']==$_POST['id']){
+					$_SESSION['cart'][$i]['2']+=$_POST['quantity'];
+					$x=1;
+					break;
+				}
+				// echo $i."=>".$_SESSION['cart'][$i]['1']."<br>"; 
+			}
+		}
+		
+		
+		echo "x=".$x."<br>";
+		// Lưu Session
+		if ($x==0){
+			array_push($_SESSION['cart'],[$_POST['id'],$_POST['name'],$_POST['quantity'],$_POST['price']]);
+			$cart_size++;
+		};
+		
+		echo $cart_size;
+		$_SESSION['cart_size']=$cart_size;
+		$_SESSION['indicator']="passed";
+	
+	header ("location: asm03-cart.php");
+	}
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +88,7 @@
 			<div class="card border-primary mb-3 px-0 col-12 col-md-4">
 				<div class="card-header bg-primary text-white font-weight-bold ">Cửa hàng Sunflower</div>
 				<div class="card-body text-primary">
-					<form action="asm03-cart.php" method="POST">
+					<form action="asm03.php" method="POST">
 						<div class="form-group">
 							<label for="id">Id hoa</label>
 							<select class="form-control" id="id" name="id" onchange="flowerChanged(this)">
