@@ -26,16 +26,22 @@
             <th>Giá</th>
             <th>Số lượng</th>
             <th>Tổng tiền</th>
+            <th>Chức năng</th>
         </tr>
-        <?php foreach($_SESSION['ds'] as $idhoa){ ?>
+        <?php foreach($_SESSION['ds'] as $key=>$idhoa){ ?>
 		<tr>
             <td class="mau"><?=$idhoa['tenhoa']?></td>
             <td><?=$idhoa['gia']?></td>
-            <td><?=$idhoa['soluong']?></td>
+            <td><input value="<?=$idhoa['soluong']?>" class="sl"></td>
             <td><?=($idhoa['gia']*$idhoa['soluong'])?></td>
+            <td>
+                <a href="http://localhost/FFSE1801.LP3/FFSE1801002/asm03/bt3/edit.php?id=<?=$key?>">Sửa</a> | 
+                <a href="http://localhost/FFSE1801.LP3/FFSE1801002/asm03/bt3/delete.php?id=<?=$key?>">Xóa</a>
+            </td>
 		</tr>
 		<?php }?>
         <tr>
+            <td></td>
             <td></td>
             <td></td>
             <td class="mau">Thành tiền:</td>
@@ -49,10 +55,5 @@
         </tr>
     </table><br>
     <a href="shop.php">Trở về</a>
-    <pre>
-        <?php
-            print_r($_SESSION['ds']);
-        ?>
-    </pre>
 </body>
 </html>

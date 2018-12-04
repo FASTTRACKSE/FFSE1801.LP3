@@ -42,8 +42,6 @@
             );
         foreach($ds as $k => $v){
             $ds[$k]['tong']=($v['toan']+$v['ly']+$v['hoa'])/3;
-            // echo $v['tong'];
-            // echo "<br>";
         }
         $k=0;
         $j=0;

@@ -31,3 +31,7 @@ table tr td{
 a{
     text-decoration: none;
 }
+.sl{
+    text-align: center;
+    width: 50px;
+}
