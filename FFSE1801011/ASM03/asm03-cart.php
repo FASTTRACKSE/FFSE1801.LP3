@@ -1,8 +1,13 @@
 <?php session_start();
+
 // Nếu click vào nút Lưu Session
-	if (isset($_GET['addToCart']))
-	{
+	if (isset($_POST['addToCart']))
+	{	
+		if (!isset($_SESSION['indicator'])){
+		echo "lan dau <br>";
+
 		$x=0;
+
 		if(!isset($_SESSION['cart'])){
 			// Lưu Session
 			$_SESSION['cart'] = array();
@@ -11,8 +16,8 @@
 		else {
 			$cart_size=count($_SESSION['cart']);	
 			for ($i=0;$i<$cart_size;$i++){
-				if($_SESSION['cart'][$i]['0']==$_GET['id']){
-					$_SESSION['cart'][$i]['2']+=$_GET['quantity'];
+				if($_SESSION['cart'][$i]['0']==$_POST['id']){
+					$_SESSION['cart'][$i]['2']+=$_POST['quantity'];
 					$x=1;
 					break;
 				}
@@ -24,32 +29,32 @@
 		echo "x=".$x."<br>";
 		// Lưu Session
 		if ($x==0){
-			array_push($_SESSION['cart'],[$_GET['id'],$_GET['name'],$_GET['quantity'],$_GET['price']]);
+			array_push($_SESSION['cart'],[$_POST['id'],$_POST['name'],$_POST['quantity'],$_POST['price']]);
 			$cart_size++;
 		};
 		
 		echo $cart_size;
+		$_SESSION['cart_size']=$cart_size;
+		$_SESSION['indicator']="passed";
+	} else {
+		echo "lan 2";
+		$cart_size=$_SESSION['cart_size'];
+		echo $cart_size;
 
 	}
-	if (isset($_GET['update'])){
+	}
+	
+	if (isset($_POST['update'])){
 		echo "Da cap nhat <br>";
 		// $i=0;
 		$_SESSION['cart'] = array();
-		foreach ($_GET as $key=>$value){
+		foreach ($_POST as $key=>$value){
 			if (preg_match('/id/', $key)){
 				$i=substr($key,strlen($key)-1,1);
-				array_push($_SESSION['cart'],[$_GET['id'.$i],$_GET['name'.$i],$_GET['quantity'.$i],$_GET['price'.$i]]);
+				array_push($_SESSION['cart'],[$_POST['id'.$i],$_POST['name'.$i],$_POST['quantity'.$i],$_POST['price'.$i]]);
 				
 			}
 		}
-		// echo "<pre>";
-		// var_dump($_SESSION['cart']);
-		// echo "</pre>";
-		// 	
-		// 	// $_SESSION['cart'][$i]['0']=$_GET['id'.$i];
-		// 	// $pos= substr($_GET['id'.$i], strlen($_GET['id'.$i])-1, 1);
-		// 	$i++;
-		// }
 			
 
 		$cart_size=count($_SESSION['cart']);
@@ -85,7 +90,7 @@
 <body>
 	<div class="container my-5">
 		<h1>Giỏ hàng</h1>
-		<form action="asm03-cart.php" method="GET">
+		<form action="asm03-cart.php" method="POST">
 			<table class="table mt-5">
 				<thead class="thead-dark">
 					<tr>
@@ -98,6 +103,7 @@
 					</tr>
 				</thead>
 				<tbody>
+					<input type="hidden" name="cart_size" value="<?=$cart_size?>">
 					<?php for ($i=0;$i<$cart_size;$i++){ ?>
 					<tr>
 						<th scope="row">
@@ -107,6 +113,7 @@
 
 						<td>
 							<input type="hidden" name="id<?=$i?>" value="<?=$_SESSION['cart'][$i]['0']?>">
+							
 							<input type="text" readonly class="form-control-plaintext" name="name<?=$i?>" value="<?=$_SESSION['cart'][$i]['1']?>">
 						</td>
 
@@ -241,16 +248,7 @@
 			var decide = confirm("Bạn có muốn xóa dòng này không?");
 			if (decide) {
 				this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);
-				// var qty = $('.qty');
-				// var qty_len=qty.length;
-				// let i = 0;
-				// while (qty[i] != null) {
-				// 	// qty[i].value=i+1;
-				// 	qty[i].setAttribute("value", i + 1)
-				// 	qty[i].setAttribute("id","sum"+i);
-				// 	console.log(qty[i])
-				// 	i++;
-				// }
+
 				let total = 0;
 				for (let j = 0; j < size; j++) {
 					console.log(size)
