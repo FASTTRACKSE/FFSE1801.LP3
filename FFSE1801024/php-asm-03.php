@@ -35,7 +35,8 @@
 
     function edit($id, $value, $session){
         $cart = $session['cart'];
-        $cart[$id]['quantityflow'] = $value;
+        $temp = $cart[$id]['quantityflow'];
+        $cart[$id]['quantityflow'] = $value+ $temp;
         setSession($cart,'cart');
     }
 
