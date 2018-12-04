@@ -1,3 +1,8 @@
+<?php session_start();
+	unset($_SESSION['indicator']);
+	// var_dump($_SESSION['indicator'])
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,7 +51,7 @@
 			<div class="card border-primary mb-3 px-0 col-12 col-md-4">
 				<div class="card-header bg-primary text-white font-weight-bold ">Cửa hàng Sunflower</div>
 				<div class="card-body text-primary">
-					<form action="asm03-cart.php" method="GET">
+					<form action="asm03-cart.php" method="POST">
 						<div class="form-group">
 							<label for="id">Id hoa</label>
 							<select class="form-control" id="id" name="id" onchange="flowerChanged(this)">
@@ -88,7 +93,9 @@
 				}
 
             
-			<?php } ?>
+			<?php } 
+				
+			?>
 			}
 			
 			function validate (name){

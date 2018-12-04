@@ -18,10 +18,11 @@
         $quantityflow = $request['quantityflow'];
         $priceflow = $request['priceflow'];
         $cart = $session['cart'];
+        $temp = $cart[$idflow]['quantityflow'];
         $cart[$idflow] = [
             'idflow'=>$idflow,
             'nameflow'=>$nameflow,
-            'quantityflow'=>$quantityflow,
+            'quantityflow'=>$quantityflow+ $temp,
             'priceflow'=>$priceflow
         ];
         setSession($cart,'cart');
