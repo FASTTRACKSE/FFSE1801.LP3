@@ -18,10 +18,11 @@
         $quantityflow = $request['quantityflow'];
         $priceflow = $request['priceflow'];
         $cart = $session['cart'];
+        $temp = $cart[$idflow]['quantityflow'];
         $cart[$idflow] = [
             'idflow'=>$idflow,
             'nameflow'=>$nameflow,
-            'quantityflow'=>$quantityflow,
+            'quantityflow'=>$quantityflow+ $temp,
             'priceflow'=>$priceflow
         ];
         setSession($cart,'cart');
@@ -35,8 +36,7 @@
 
     function edit($id, $value, $session){
         $cart = $session['cart'];
-        $temp = $cart[$id]['quantityflow'];
-        $cart[$id]['quantityflow'] = $value+ $temp;
+        $cart[$id]['quantityflow'] = $value;
         setSession($cart,'cart');
     }
 
