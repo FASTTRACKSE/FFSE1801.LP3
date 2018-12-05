@@ -26,12 +26,17 @@
         th.nam{
             width: 250px;
         }
-        tr td{
+        tr td.center{
             text-align: center;
         }
-        .red{
+        tr td.remover{
+            color: black;
+        }
+        tr td.remove:hover{
+            cursor: pointer;
             color: red;
         }
+        
     </style>
 </head>
 <body>
@@ -45,12 +50,14 @@
             <th class="nam">Ghi chú</th>
         </tr>
         <?php
+            
             $stt = "0";
             $a = array(0,8,0,8,6,0,2.5,9,4,5);
             $b = array(0,0,5,5,3,5,4,1,3,7);
             $x = array();
             $str = array();
             for($i = 0;$i <count($a);$i++){
+                $color = "black";
                 $stt++;
                 if($a[$i] != 0){
                     $x[$i]=-$b[$i]/$a[$i];
@@ -58,19 +65,24 @@
                 }else{
                     $x[$i]="-";
                     if($b[$i] != 0){
-                        $str[$i]="<span style='color:red;'> Hệ số không hợp lệ a=0 </span>";
-                        
+                        $str[$i]="Hệ số không hợp lệ a=0";
+                        $color = "red";
                     }else{
                         $str[$i]=" Phương trình vô số nghiệm";
                     }
                 }
         ?>
-        <tr>
-            <td><?= $stt; ?></td>
-            <td><?= $a[$i]; ?></td>
-            <td><?= $b[$i]; ?></td>
-            <td><?= $x[$i]; ?></td>
+        <tr
+            <?php
+                echo "style=color:".$color;
+            ?>
+        >
+            <td class="center"><?= $stt; ?></td>
+            <td class="center"><?= $a[$i]; ?></td>
+            <td class="center"><?= $b[$i]; ?></td>
+            <td class="center"><?= $x[$i]; ?></td>
             <td><?= $str[$i]; ?></td>
+            <td class="remove" onclick="this.parentElement.remove()">Xóa</td>
         </tr>
         <?php }?>
     </table>
@@ -107,17 +119,17 @@
                         $str[$i] = "Phương trình có hai nghiệm phân biệt";
                     }
                 }
-                
         ?>
         <tr>
-            <td><?= $stt; ?></td>
-            <td><?= $a[$i]; ?></td>
-            <td><?= $b[$i]; ?></td>
-            <td><?= $c[$i]; ?></td>
-            <td><?= $x[$i]; ?></td>
+            <td class="center"><?= $stt; ?></td>
+            <td class="center"><?= $a[$i]; ?></td>
+            <td class="center"><?= $b[$i]; ?></td>
+            <td class="center"><?= $c[$i]; ?></td>
+            <td class="center"><?= $x[$i]; ?></td>
             <td><?= $str[$i]; ?></td>
+            <td class="remove" onclick="this.parentElement.remove()">Xóa</td>
         </tr>
-        <?php }?>
+        <?php } ?>
     </table>
     
 </body>
