@@ -1,19 +1,8 @@
 <?php session_start();
 
-	if(isset($_SESSION['exists'])){
-		unset($_SESSION['exists']);
+	if (isset($_SESSION['reset_error'])){
+		echo $_SESSION['reset_error'];
 	}
-	if(isset($_SESSION['ava_error'])){
-		unset($_SESSION['ava_error']);
-	}
-	if(isset($_SESSION['pw_error'])){
-		unset($_SESSION['pw_error']);
-	}
-	if(isset($_SESSION['users']['temp'])){
-		unset($_SESSION['users']['temp']);
-		header ('location: asm04.php');
-	}
-
 ?>
 
 <!DOCTYPE html>
@@ -79,7 +68,7 @@
 						<td><?=$value['name']?></td>
 						<td><?=$value['gender']?></td>
 						<td><?=$value['location']?></td>
-						<td><img src="<?=$value['avatar']?>" alt="Avatar của <?=$value['name']?>"> </td>
+						<td><img src="<?=".".$value['avatar']?>" alt="Avatar của <?=$value['name']?>"> </td>
 						<td><?php 
 						
 						if ($value['hobbies']!=NULL){
@@ -88,14 +77,14 @@
 						}}
 							?></td>
 						<td>
-							<form action="asm04.php" method="POST"><button type="submit" class="btn btn-link" name="delete" value="<?=$key?>"><i class="fas fa-times fa-2x text-danger"></i> Xóa user</button></form>
+							<form action="../asm04.php" method="POST"><button type="submit" class="btn btn-link" name="delete" value="<?=$key?>"><i class="fas fa-times fa-2x text-danger"></i> Xóa user</button></form>
 						</td>
 					</tr>
 					<?php }}?>
 				</tbody>
 			</table>
 
-			<a class="btn btn-primary" id="back" href="asm04.php" >Trở về</a>
+			<a class="btn btn-primary" id="back" href="../asm04.php" >Trở về</a>
 	</div>
 
 	<?php
