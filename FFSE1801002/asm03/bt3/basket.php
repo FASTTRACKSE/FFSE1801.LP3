@@ -38,8 +38,8 @@
             <td><input value="<?=$idhoa['soluong']?>" class="sl"></td>
             <td><?=($idhoa['gia']*$idhoa['soluong'])?></td>
             <td>
-                <a href="http://localhost/FFSE1801.LP3/FFSE1801002/asm03/bt3/edit.php?id=<?=$key?>">Sửa</a> | 
-                <a href="http://localhost/FFSE1801.LP3/FFSE1801002/asm03/bt3/delete.php?id=<?=$key?>">Xóa</a>
+                <a href="edit.php?id=<?=$key?>">Sửa</a> | 
+                <a href="delete.php?id=<?=$key?>">Xóa</a>
             </td>
 		</tr>
 		<?php }?>
