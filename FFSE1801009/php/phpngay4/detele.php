@@ -17,5 +17,5 @@ if(isset($_POST['delete'])){
 ?>
 <form action="" method="post">
 	<button class="btn btn-danger" type="submit" name="delete">Xóa</button>
-	<a href="/php/phpngay4/giohang.php"><button type="button" class="btn btn-success">Trở lại</button></a>
+	<a href="php-day2/giohang.php"><button type="button" class="btn btn-success">Trở lại</button></a>
 </form>

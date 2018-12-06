@@ -31,7 +31,7 @@
 				<td style="border-bottom: 1px solid"><?=$value['dongia']?></td>
 				<td style="border-bottom: 1px solid"><?=$value['soluong']?></td>
 				<td style="border-bottom: 1px solid"><?= $sum ?></td>
-				<td><a href="http://localhost/php/phpngay4/edit.php?id=<?=$key?>">Sữa</a>/<a href="http://localhost/php/phpngay4/detele.php?id=<?=$key?>">Xóa</a></td>
+				<td><a href="http://localhost/php-day2/edit.php?id=<?=$key?>">Sữa</a>/<a href="http://localhost/php-day2/detele.php?id=<?=$key?>">Xóa</a></td>
 			</tr>
 		<?php }?>
 	</table>
