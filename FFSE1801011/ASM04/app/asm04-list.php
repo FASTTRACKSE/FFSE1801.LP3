@@ -1,5 +1,5 @@
 <?php session_start();
-
+	// echo $a;
 	if (isset($_SESSION['reset_error'])){
 		echo $_SESSION['reset_error'];
 	}

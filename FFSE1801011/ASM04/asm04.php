@@ -1,13 +1,16 @@
 <?php session_start();
-
+    $a="hello";
     
     if (isset($_POST['signup']))
 	{	
         $id=trim($_POST['account']);
-        
+        $error = array();
         
         $avaname="ffse".time()."-".$_FILES['avatar']['name'];
         $tmp_name=$_FILES['avatar']['tmp_name'];
+        if(!is_dir('./avatar_folder')){
+            mkdir('./avatar_folder');
+        }
         $part_upload="./avatar_folder/".$avaname;
 
         $image_file_type = strtolower(pathinfo($part_upload,PATHINFO_EXTENSION));
@@ -16,10 +19,10 @@
         $check_type_file =  array_search($image_file_type,$file_types );
             if ($image_file_type != "jpg" && $image_file_type != "png" && $image_file_type != "jpeg"
             && $image_file_type != "gif" ) {
-                $_SESSION['ava_error']='1'; 
+                $error['img_ext']="Avatar bị sai định dạng. Vui lòng sử dụng loại file 'jpg','jpeg','png' hoặc'gif'.";
             }
             if (!move_uploaded_file($tmp_name,$part_upload)) {
-                $_SESSION['ava_error']='2';
+                $error['img_up']='Upload file bị lỗi, vui lòng thử lại.';
             }
         
         $data= array(
@@ -34,23 +37,21 @@
         } else {$data['hobbies']="";}
         
         if(isset($_SESSION['users'][$id])){
-            $_SESSION['exists']=true;  
+            $error['acc']='Tài khoản của bạn đã bị trùng';  
         }
 
         if($_POST['password']==''){
-            $_SESSION['pw_error']=true;
+            $error['pw']='Password bị lỗi.';
         }
-
-        if (isset($_SESSION['exists']) || isset($_SESSION['ava_error'])|| isset($_SESSION['pw_error'])){
-            $_SESSION['users']['temp']=$data;
-            $_SESSION['users']['temp']['account']=$_POST['account'];
-        }
-        else {
+        if ($error==[]){
             $_SESSION['users'][$id]=$data;
             header ('location: app/asm04-list.php');
         }
+
+    } else{
+        $error = array();
     }
-     
+
     if (isset($_POST['delete'])){
         unset($_SESSION['users'][$_POST['delete']]);
         header ('location: app/asm04-list.php');
@@ -103,22 +104,25 @@
             <div class="card border-primary mb-3 px-0 col-12 col-md-6">
                 <div class="card-header bg-primary text-white font-weight-bold ">Đăng ký tài khoản</div>
                 <div class="card-body text-primary">
-                    <form action="/asm04.php" method="POST" enctype='multipart/form-data'>
+                    <form action="asm04.php" method="POST" enctype='multipart/form-data'>
 
                         <div class="form-group">
                             <label for="account">Tên đăng nhập (*)</label>
-                            <input type="text" class="form-control <?php if (isset($_SESSION['exists'])){
-                                    echo "is-invalid"; $acc_error="Tài khoản của bạn đã bị trùng" ; } 
-                                ?>" id="account" name="account" value="<?php if (isset($_SESSION['users']['temp']['account'])){
-                                echo trim($_SESSION['users']['temp']['account']);
-                            }?>"
+                            <input type="text" class="form-control <?php if (isset($error['acc'])){
+                                    echo "is-invalid"; } 
+                                ?>"
+                                id="account" name="account" 
+                                value="<?php if (isset($error['acc'])){
+                                echo trim($_POST['account']);
+                                }?>"
                             required>
                             <div class="valid-feedback">
                                 &#x2714;
                             </div>
                             <div class="invalid-feedback">
-                                <?=$acc_error?>
+                                <?=$error['acc']?>
                             </div>
+                            fanalux
                         </div>
                         <div class="form-group">
                             <label for="password">Mật khẩu (*)</label>
@@ -129,8 +133,8 @@
                         </div>
                         <div class="form-group">
                             <label for="name">Họ và tên (*)</label>
-                            <input type="text" class="form-control is-valid" id="name" name="name" value="<?php if (isset($_SESSION['users']['temp']['name'])){
-                                echo trim($_SESSION['users']['temp']['name']);
+                            <input type="text" class="form-control is-valid" id="name" name="name" value="<?php if (isset($_POST['name'])){
+                                echo trim($_POST['name']);
                             }?>"
                                 placeholder="Họ tên đầy đủ" required>
                             <div class="valid-feedback">
@@ -139,21 +143,19 @@
                         </div>
                         <div class="form-group custom-file">
                             <input type="file" class="custom-file-input <?php
-                                if ($_SESSION['ava_error']=="
-                                1"){ echo "is-invalid" ; $ava_error="Avatar bị sai định dạng. Vui lòng sử dụng loại file 'jpg','jpeg','png' hoặc'gif'."
-                                ; } else if ($_SESSION['ava_error']=="2" ){ echo "is-invalid" ; $ava_error="Upload file bị lỗi, vui lòng thử lại."
+                                if (isset($error['img_ext'])){ echo "is-invalid";} else if (isset($error['img_up'])){ echo "is-invalid" ; $up_err=true;
                                 ; } ?>" id="avatar" name="avatar" placeholder="Ảnh đại diện" required>
                             <label class="custom-file-label" id="avatar_name" for="avatar">Ảnh đại diện</label>
                             <div class="invalid-feedback">
-                                <?=$ava_error?>
+                                <?php if (isset($up_err)){echo $error['img_ext'];} else {echo $error['img_up'];}?>
                             </div><br>
                         </div>
                         <div class="form-group mt-2">
                             <label for="location">Địa chỉ</label>
                             <select class="form-control" id="location" name="location">
                                 <?php 
-                               if (isset($_SESSION['users']['temp']['location'])){
-                                    $temp_location= $_SESSION['users']['temp']['location'];
+                               if (isset($_POST['location'])){
+                                    $temp_location= $_POST['location'];
                                 } else {$temp_location="";}
                                 for ($i=0;$i<$city_len;$i++){
                                     $location=$city[$i];
@@ -221,21 +223,6 @@
                         })();
                     </script>
 
-                    <script language="javascript">
-                        function validate(name) {
-                            $("form").submit(function (e) {
-                                if ($(name).val() == "") {
-                                    alert("Bạn chưa chọn loại hoa.");
-                                    e.preventDefault();
-                                } else {
-                                    this.submit();
-                                }
-
-                            });
-
-
-                        }
-                    </script>
                 </div>
 
             </div>
@@ -258,12 +245,7 @@
                 infoArea.textContent = 'Đã chọn: ' + fileName;
             }
         </script>
-        <?php 
-            unset($_SESSION['exists']);
-            unset($_SESSION['ava_error']);
-            unset($_SESSION['pw_error']);
-            unset($_SESSION['users']['temp']);
-            ?>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
             crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
