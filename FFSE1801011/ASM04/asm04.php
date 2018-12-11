@@ -122,7 +122,7 @@
                             <div class="invalid-feedback">
                                 <?=$error['acc']?>
                             </div>
-                            fanalux
+                            
                         </div>
                         <div class="form-group">
                             <label for="password">Mật khẩu (*)</label>
