@@ -1,62 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
-    <link rel="stylesheet" href="style.css">
+	<title>asm03</title>
 </head>
 <body>
-    <?php
-        session_start();
-		if(isset($_POST['submit'])){
+	<h1>Giỏ hàng</h1>
+	<div class="bang">
+		<table border=1 cellspacing=0 cellpading=0>
+			<tr>
+				<th>Tên sản phẩm</th>
+				<th> Giá </th>
+				<th> Số lượng </th>
+				<th> Tổng tiền </th>
+			</tr>
+	<?php  
+		session_start();
+		if (isset($_POST['submit'])) {
 			$data=array(
-					'tenhoa'=>$_POST['tenhoa'],
-                    'soluong'=>$_POST['soluong'],
-                    'gia'=>$_POST['gia']
+				'name'=>$_POST['tenhoa'],
+				'price'=>$_POST['gia'],
+				'number'=>$_POST['soluong']
 			);
-            if(isset($_SESSION['ds'][$_POST['id']])){
-                $_SESSION['ds'][$_POST['id']]['soluong']+=$_POST['soluong'];
-            }else{
-                $_SESSION['ds'][$_POST['id']]=$data;
-            }
+			$_SESSION['ds'][$_POST['id']]=$data;
 		}
-    ?>
-    <h1>Giỏ hàng</h1>
-    <table>
-        <tr>
-            <th>Tên sản phẩm</th>
-            <th>Giá</th>
-            <th>Số lượng</th>
-            <th>Tổng tiền</th>
-            <th>Chức năng</th>
-        </tr>
-        <?php foreach($_SESSION['ds'] as $key=>$idhoa){ ?>
-		<tr>
-            <td class="mau"><?=$idhoa['tenhoa']?></td>
-            <td><?=$idhoa['gia']?></td>
-            <td><input value="<?=$idhoa['soluong']?>" class="sl"></td>
-            <td><?=($idhoa['gia']*$idhoa['soluong'])?></td>
-            <td>
-                <a href="edit.php?id=<?=$key?>">Sửa</a> | 
-                <a href="delete.php?id=<?=$key?>">Xóa</a>
-            </td>
-		</tr>
-		<?php }?>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td class="mau">Thành tiền:</td>
-            <?php
-                $thanhtien=0;
-                foreach($_SESSION['ds'] as $idhoa2){
-                    $thanhtien+=$idhoa2['gia']*$idhoa2['soluong'];
-                }
-            ?>
-            <td><?=$thanhtien?></td>
-        </tr>
-    </table><br>
-    <a href="shop.php">Trở về</a>
+	?>	
+		<?php foreach ($_SESSION['ds'] as $key => $value) { ?>
+			<tr>
+				<td><?=$value['name']?></td>
+				<td><?=$value['price']?></td>
+				<td><?=$value['number']?></td>
+				<td><?=($value['price']*$value['number'])?></td>
+			</tr>	
+		<?php } ?>
+		</table>
+		<p><a href="shop.php">Trở về</a></p>
+		<pre>
+			<?php
+				print_r($_SESSION['ds']);
+			?>
+		</pre>
 </body>
 </html>
