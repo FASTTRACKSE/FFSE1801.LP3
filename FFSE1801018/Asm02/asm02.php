@@ -93,7 +93,7 @@
             foreach ($danhsach as $hocsinh) {
                 $tb[] = ($hocsinh['toan']+$hocsinh['ly']+$hocsinh['hoa'])/3;
                 
-            };
+            
             foreach ($tb as $diem) {    
                 if ($diem<5) { ?>
                     <tr style="color: red">
@@ -102,7 +102,7 @@
                     <td><?=$hocsinh['toan']?></td>
                     <td><?=$hocsinh['ly']?></td>
                     <td><?=$hocsinh['hoa']?></td>
-                    <td><?=round($diem,2)?></td>
+                    <td><?=round($diem,2) ?></td>
                     <td>Loại yếu</td>
                     </tr>
                     <?php  
@@ -125,7 +125,7 @@
                     }; ?>
                     </tr>
                     <?php    
-                };
+                }};
                 
             };
             
