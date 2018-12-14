@@ -11,16 +11,23 @@
 <body>
     <?php
         session_start();
+        // session_destroy();
+        // if(isset($_POST['username'])==false){
+        //     alert('Bạn nhập thiếu dữ liệu!');
+        //     header("location: dk.php");
+        // }
         if(isset($_POST['xacnhan'])){
+            $name=$_FILES['avt']['name'];
             $data=array(
                 'passwork'=>$_POST['mk'],
                 'ten'=>$_POST['ten'],
-                // 'avt'=>'',
+                'avt'=>$_FILES['avt']['name'],
                 'diachi'=>$_POST['diachi'],
                 'sex'=>$_POST['sex'],
                 'sothich'=>$_POST['sothich']
             );
             $_SESSION['danhsach'][$_POST['username']]=$data;
+            move_uploaded_file($_FILES['avt']['tmp_name'],"img/$name");
         }
     ?>
     <h1>Danh sách tài khoản</h1>
@@ -39,14 +46,16 @@
                 <td><?=$tt?></td>
                 <td><?=$k?></td>
                 <td><?=$vl['ten']?></td>
-                <td></td>
+                <td><img src="img/<?=$vl['avt']?>" style="width: 10rem; height: 10rem"></td>
                 <td><?=$vl['sex']?></td>
                 <td><?=$vl['diachi']?></td>
-                <td><a href="">Xóa</td>
+                <td><a href="delete.php?id=<?=$k?>">Xóa</td>
             </tr>
             <?php $tt++; ?>
         <?php } ?>
     </table>
+    <br/>
+    <a href="dk.php">Trở lại</a>
     <pre>
         <?php
             print_r($_SESSION['danhsach']);

@@ -21,7 +21,7 @@
             </tr>
             <tr>
                 <td>Mật khẩu (*)</td>
-                <td><input name="mk" type="passwork" class='nhap'></td>
+                <td><input name="mk" type="password" class='nhap'></td>
             </tr>
             <tr>
                 <td>Họ và tên (*)</td>
