@@ -56,11 +56,6 @@
     </table>
     <br/>
     <a href="dk.php">Trở lại</a>
-    <pre>
-        <?php
-            print_r($_SESSION['danhsach']);
-        ?>
-    </pre>
 </body>
 
 </html>
