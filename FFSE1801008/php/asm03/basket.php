@@ -12,9 +12,11 @@
 				<th> Giá </th>
 				<th> Số lượng </th>
 				<th> Tổng tiền </th>
+				<th> Chức năng </th>
 			</tr>
 	<?php  
 		session_start();
+		// session_destroy();
 		if (isset($_POST['submit'])) {
 			$data=array(
 				'name'=>$_POST['tenhoa'],
@@ -30,7 +32,11 @@
 				<td><?=$value['price']?></td>
 				<td><?=$value['number']?></td>
 				<td><?=($value['price']*$value['number'])?></td>
+				<td> Xóa | Sửa</td>
 			</tr>	
+			<tr> 
+				<td> Thành tiền </td> 
+			</tr>
 		<?php } ?>
 		</table>
 		<p><a href="shop.php">Trở về</a></p>
