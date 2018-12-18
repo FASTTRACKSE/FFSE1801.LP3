@@ -34,10 +34,10 @@
 		<?php } ?>
 		</table>
 		<p><a href="shop.php">Trở về</a></p>
-		<pre>
+		<!-- <pre>
 			<?php
 				print_r($_SESSION['ds']);
 			?>
-		</pre>
+		</pre> -->
 </body>
 </html>
