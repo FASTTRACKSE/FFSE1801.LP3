@@ -2,11 +2,12 @@
 <html>
 <head>
 	<title>asm03</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 	<h1>Giỏ hàng</h1>
 	<div class="bang">
-		<table border=1 cellspacing=0 cellpading=0>
+		<table >
 			<tr>
 				<th>Tên sản phẩm</th>
 				<th> Giá </th>
