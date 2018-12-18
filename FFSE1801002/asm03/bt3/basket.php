@@ -36,7 +36,7 @@
 		<tr>
             <td class="mau"><?=$idhoa['tenhoa']?></td>
             <td><?=$idhoa['gia']?></td>
-            <td><?=$idhoa['soluong']?></td>
+            <td><input value="<?=$idhoa['soluong']?>" class="sl"></td>
             <td><?=($idhoa['gia']*$idhoa['soluong'])?></td>
             <td>
                 <a href="edit.php?id=<?=$key?>">Sửa</a> | 
