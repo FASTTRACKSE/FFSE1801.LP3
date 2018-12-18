@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fdc2764d-4148-4eee-8667-96ba80820f23" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/admin/assets/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/admin/assets/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/admin/assets/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/admin/assets/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/admin/assets/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/admin/assets/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/admin/assets/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/admin/assets/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/admin/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/admin/modules/edit.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/admin/modules/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/admin/modules/pages.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/admin/modules/posts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/admin/modules/users.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/css/pure.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/css/style.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/applicant/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/applicant/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/applicant/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/applicant/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/applicant/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/applicant/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/applicant/8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/applicant/9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/applicant/ava1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/articles/camnang.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/backgrounds/contact_background.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/backgrounds/photo1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/backgrounds/photo2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/employer/001/activity/act1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/employer/001/activity/act2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/employer/001/activity/act3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/employer/001/activity/act4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/employer/001/activity/act5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/employer/001/banner1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/employer/001/banner2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/employer/001/banner3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/employer/001/banner4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/employer/001/banner5 .jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/employer/001/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/employer/002/activity/act1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/employer/002/activity/act2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/employer/002/activity/act3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/employer/002/activity/act4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/employer/002/activity/act5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/employer/002/banner1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/employer/002/banner2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/employer/002/banner3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/employer/002/logo.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/employer/003/activity/act1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/employer/003/activity/act2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/employer/003/activity/act3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/employer/003/activity/act4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/employer/003/activity/act5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/employer/003/banner1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/employer/003/banner2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/employer/003/banner3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/employer/003/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/employer/004/activity/act1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/employer/004/activity/act2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/employer/004/activity/act3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/employer/004/activity/act4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/employer/004/activity/act5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/employer/004/activity/logo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/employer/004/banner1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/employer/004/banner2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/employer/004/banner3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/employer/004/logo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/events/event1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/events/event2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/events/event3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/events/event4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/events/event5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/flag-en-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/flag-vn-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/icons/calendar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/icons/facebook.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/icons/ftlogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/icons/gmail.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/icons/logo_32x32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/icons/medal1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/icons/medal2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/icons/medal3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/icons/megaphone.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/icons/messenger.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/icons/month.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/icons/week.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/reviewers/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/reviewers/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/reviewers/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/reviewers/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/reviewers/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/reviewers/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/reviewers/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/reviewers/8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/reviewers/9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/images/screenshot-17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/js/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/js/push_data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/assets/js/tagsinput.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/templates/applicant/applicant_profile.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/templates/components/fixed_menu.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/templates/components/footer.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/templates/components/job_filter.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/templates/components/navigation.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/templates/components/review.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/templates/employer/employer_profile.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/templates/employer/job_description.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/templates/shared/about_us.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/templates/shared/constructing.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/templates/shared/contact.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ASM.LP2/templates/shared/main_job.php" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/oop1.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="254">
+              <caret line="16" column="19" lean-forward="true" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/oop1.php" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.2">
+    <include_path>
+      <path value="C:/laragon/bin/php/php-7.2.11-Win32-VC15-x86" />
+    </include_path>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="10" />
+    <option name="y" value="20" />
+    <option name="width" value="1346" />
+    <option name="height" value="688" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="OOP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OOP" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="C:/laragon/bin/php/php-7.2.11-Win32-VC15-x86" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="oop1.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/oop1.php">
+      <CommandLine parameters="-a" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHP Script.oop1.php" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fdc2764d-4148-4eee-8667-96ba80820f23" name="Default Changelist" comment="" />
+      <created>1544684487411</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1544684487411</updated>
+      <workItem from="1544684490440" duration="1250000" />
+      <workItem from="1544686383355" duration="3000" />
+      <workItem from="1544793897228" duration="631000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1884000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17246597" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3289689" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="PHP-CGI Server" order="10" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" weight="0.2651391" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/oop1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="16" column="19" lean-forward="true" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

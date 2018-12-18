@@ -4,7 +4,7 @@
 	
 	$cart_size=count($_SESSION['cart']);
 	echo $cart_size;
-	
+
 	if (isset($_POST['update'])){
 		echo "Da cap nhat <br>";
 		// $i=0;
@@ -34,7 +34,9 @@
 	 crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
 	 crossorigin="anonymous">
+
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
 	<style>
 		.no-drop {cursor: no-drop;}
 		input{
@@ -78,12 +80,12 @@
 						</td>
 
 						<td><input class="form-control" id="quantity<?=$i?>" type="number" name="quantity<?=$i?>" min="1" step="1" value="<?=$_SESSION['cart'][$i]['2']?>"></td>
-						<td class="right">&times; <input type="text" readonly class="form-control-plaintext price" id="price<?=$i?>" name="price<?=$i?>"
-							 value="<?=$_SESSION['cart'][$i]['3']?>">
+						<td class="right">&times; <input type="text" readonly class="form-control-plaintext price right" id="price<?=$i?>" name="price<?=$i?>"
+							 value="<?=$_SESSION['cart'][$i]['3']?>"  data-mask="#,###" data-mask-reverse="true" data-mask-maxlength="false">
 
 						</td>
 						<td class="right">
-							= <input type="text" readonly class="form-control-plaintext sum" id="sum<?=$i?>" value="<?=($_SESSION['cart'][$i]['2']*$_SESSION['cart'][$i]['3'])?>">
+							= <input type="text" readonly class="form-control-plaintext sum right" id="sum<?=$i?>" value="<?=($_SESSION['cart'][$i]['2']*$_SESSION['cart'][$i]['3'])?>" data-mask="#,###" data-mask-reverse="true" data-mask-maxlength="false">
 
 						</td>
 						<td><a href="#" id="del<?=$i?>" class="del"><i class="fas fa-times fa-2x text-danger"></i> Bỏ</a></td>
@@ -99,10 +101,10 @@
 					<tr>
 						<td colspan="4">Thành tiền</td>
 						<td id='total' class="right">
-						<input type="text" readonly class="form-control-plaintext total" value="<?php
+						<input type="text" readonly class="form-control-plaintext total right" value="<?php
 							if (empty($total)){echo "";}
 							else {echo $total;}
-							?>">
+							?>" data-mask="#,###" data-mask-reverse="true" data-mask-maxlength="false">
 							
 
 						</td>
@@ -123,6 +125,8 @@
 
 	</div>
 	<script>
+
+
 		function validate() {
 
 			if ($(".qty").val() == undefined) {
@@ -236,11 +240,13 @@
 			// unset($_SESSION['cart']);
 
             ?>
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
 	 crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
 	 crossorigin="anonymous"></script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.js"></script>
 </body>
 
 </html>

@@ -9,14 +9,17 @@
 <body>
     <?php
         session_start();
-        // session_destroy();
 		if(isset($_POST['submit'])){
 			$data=array(
 					'tenhoa'=>$_POST['tenhoa'],
                     'soluong'=>$_POST['soluong'],
                     'gia'=>$_POST['gia']
 			);
-			$_SESSION['ds'][$_POST['id']]=$data;
+            if(isset($_SESSION['ds'][$_POST['id']])){
+                $_SESSION['ds'][$_POST['id']]['soluong']+=$_POST['soluong'];
+            }else{
+                $_SESSION['ds'][$_POST['id']]=$data;
+            }
 		}
     ?>
     <h1>Giỏ hàng</h1>
@@ -26,16 +29,22 @@
             <th>Giá</th>
             <th>Số lượng</th>
             <th>Tổng tiền</th>
+            <th>Chức năng</th>
         </tr>
-        <?php foreach($_SESSION['ds'] as $idhoa){ ?>
+        <?php foreach($_SESSION['ds'] as $key=>$idhoa){ ?>
 		<tr>
             <td class="mau"><?=$idhoa['tenhoa']?></td>
             <td><?=$idhoa['gia']?></td>
-            <td><?=$idhoa['soluong']?></td>
+            <td><input value="<?=$idhoa['soluong']?>" class="sl"></td>
             <td><?=($idhoa['gia']*$idhoa['soluong'])?></td>
+            <td>
+                <a href="edit.php?id=<?=$key?>">Sửa</a> | 
+                <a href="delete.php?id=<?=$key?>">Xóa</a>
+            </td>
 		</tr>
 		<?php }?>
         <tr>
+            <td></td>
             <td></td>
             <td></td>
             <td class="mau">Thành tiền:</td>
@@ -49,10 +58,5 @@
         </tr>
     </table><br>
     <a href="shop.php">Trở về</a>
-    <pre>
-        <?php
-            print_r($_SESSION['ds']);
-        ?>
-    </pre>
 </body>
 </html>

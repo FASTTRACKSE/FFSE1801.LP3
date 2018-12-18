@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>asm01</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 <?php
@@ -16,6 +17,7 @@
 		} 
 	}
 ?>
+<div class="bang1">
 	<h1>Giải phương trình bậc nhất</h1><br>
 	<table border=1 cellspacing=0 cellpading=0>
 		<tr>
@@ -41,6 +43,7 @@
 	}
 ?>
 	</table>
+</div>	
 <?php
 	$c= array(1,0,4,1.5,3,0.5,3);
 	$d= array(4,6,8,0,6,3,5);
@@ -68,6 +71,7 @@
 		} 
 	}
 ?>
+<div class="bang2">
 	<h1>Giải phương trình bậc 2</h1><br>
 	<table border=1 cellspacing=0 cellpading=0>
 		<tr>
@@ -120,5 +124,6 @@
 	}
 ?>			
 	</table>
+</div>	
 </body>
 </html>
