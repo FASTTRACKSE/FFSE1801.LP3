@@ -16,19 +16,18 @@
                 }
 
                 function show_xy() {
-                    echo $this->x;
+                    echo "X = ".$this->x;
                     echo "<br>";
-                    echo $this->y;
+                    echo "Y = ".$this->y;
 
                 }
 
             }
 
             class CIRCLE extends POINT{
-                
                 var $r = '' ;
 
-                function __construct($r) {
+                function __construct($x,$y,$r) {
                     parent::__construct($x,$y);
                     $this->r = $r;
 
@@ -38,30 +37,29 @@
 
                     parent::show_xy();
                     echo "<br>";
-                    echo $this->r;
+                    echo "R = ".$this->r;
                 }
 
             }
-            
-            // <!-- <form action="" method="POST">
-            //     <input type="text" name="x" placeholder="x"/>
-            //     <input type="text" name="y" placeholder="y"/>
-            //     <input type="submit" name="sub" value="Gửi"/>
+            ?>
+            <form action="" method="POST">
+                <input type="text" name="x" placeholder="x"/>
+                <input type="text" name="y" placeholder="y"/>
+                <input type="text" name="r" placeholder="r"/>
+                <input type="submit" name="sub" value="Gửi"/>
 
-            // </form> -->
+            </form>
+
+            <?php
+            if(isset($_POST['sub'])) {
+                $diem = new CIRCLE($_POST['x'],$_POST['y'],$_POST['r']);
+                $diem ->show_r();
             
-            // if(isset($_POST['sub'])) {
-            //     $diem = new POINT($_POST['x'],$_POST['y']);
-            //     echo '<pre>';
-            //     $diem ->show_r();
-            //     echo '</pre>';
 
                 
 
-            // }
+            }
                 
-            $diem = new CIRCLE(23,65,7);
-            $diem->show_r();
         ?>  
 
         
