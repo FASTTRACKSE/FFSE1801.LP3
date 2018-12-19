@@ -9,6 +9,7 @@
 <body>
     <?php
         session_start();
+        // session_destroy();
 		if(isset($_POST['submit'])){
 			$data=array(
 					'tenhoa'=>$_POST['tenhoa'],
@@ -35,7 +36,7 @@
 		<tr>
             <td class="mau"><?=$idhoa['tenhoa']?></td>
             <td><?=$idhoa['gia']?></td>
-            <td><input value="<?=$idhoa['soluong']?>" class="sl"></td>
+            <td><?=$idhoa['soluong']?></td>
             <td><?=($idhoa['gia']*$idhoa['soluong'])?></td>
             <td>
                 <a href="edit.php?id=<?=$key?>">Sửa</a> | 

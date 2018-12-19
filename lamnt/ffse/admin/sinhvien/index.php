@@ -2,22 +2,30 @@
 	require "../../templates/backend/header.php";
 ?>
 <?php 
-	$mysqli = new mysqli("localhost","root","","ffse1701");
-	$mysqli->set_charset("utf8");
+
 	$sql = "SELECT * FROM lms_students";
-	$search="";
+	$search=""; 
 	if(isset($_GET['timkiem'])){
 		$search = $_GET['search'];
 		$sql = "SELECT * FROM lms_students
 				WHERE first_name LIKE '%{$search}'";
-
 	}
+
 	$result=$mysqli->query($sql);
 ?>
 <div id="page-wrapper">
 	<div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Danh sach sinh vien</h1>
+        </div>
+        <div class="col-lg-12">
+        	<a class="btn btn-success" href="http://localhost/FFSE1801.LP3/lamnt/ffse/admin/sinhvien/add.php">Them moi</a>
+        	<?php 
+        		if(isset($_SESSION['msg'])){
+        			echo $_SESSION['msg'];
+        			unset($_SESSION['msg']);
+        		}
+        	?>
         </div>
         <!-- /.col-lg-12 -->
         <div class="col-lg-12">
@@ -49,7 +57,7 @@
                                             <td><?= $item['code'] ?></td>
                                             <td><?= $item['first_name'] ?></td>
                                             <td><?= $item['email'] ?></td>
-                                            <td><a href="#">Sua</a> <a href="#">Xoa</a></td>
+                                            <td><a href="edit.php?code=<?=$item['code']?>">Sua</a> <a href="#">Xoa</a></td>
                                         </tr>
                                        <?php }?>
                                     </tbody>
