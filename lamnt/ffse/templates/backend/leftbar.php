@@ -20,5 +20,5 @@
             
         </ul>
     </div>
-                <!-- /.sidebar-collapse -->
-            </div>
+    <!-- /.sidebar-collapse -->
+</div>

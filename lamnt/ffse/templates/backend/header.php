@@ -1,7 +1,10 @@
 <html lang="en">
-
 <head>
-
+    <?php 
+        $mysqli = new mysqli("localhost","root","","ffse1701");
+        $mysqli->set_charset("utf8");
+        session_start();
+    ?>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -44,11 +47,9 @@
                 <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
             </div>
             <?php 
-                require "headerbar.php";
+                require_once "headerbar.php";
             ?>
 
-            <?php 
-                require "leftbar.php";
-            ?>
+           
             <!-- /.navbar-static-side -->
         </nav>
