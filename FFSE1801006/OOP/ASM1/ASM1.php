@@ -6,10 +6,10 @@
         
         <?php
             class POINT {
-                private $x = '' ;
-                private $y = '' ;
+                var $x = '' ;
+                var $y = '' ;
 
-                public function __construct($x,$y) {
+                function __construct($x,$y) {
                     $this->x = $x;
                     $this->y = $y;
  
@@ -25,15 +25,16 @@
             }
 
             class CIRCLE extends POINT{
-                private $r = '' ;
+                
+                var $r = '' ;
 
-                public function __construct() {
-                    parent::__construct;
+                function __construct($r) {
+                    parent::__construct($x,$y);
                     $this->r = $r;
 
                 }
 
-                public function show_r() {
+                function show_r() {
 
                     parent::show_xy();
                     echo "<br>";
@@ -60,7 +61,7 @@
             // }
                 
             $diem = new CIRCLE(23,65,7);
-            show_r();
+            $diem->show_r();
         ?>  
 
         
