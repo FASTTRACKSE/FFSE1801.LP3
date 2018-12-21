@@ -4,7 +4,7 @@
     <?php 
     $mysqli = new mysqli("localhost","root","","ffse1701");
     $mysqli->set_charset("utf8");
-    session_start();
+    // session_start();
     ?>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -25,15 +25,21 @@
         <div class="sidebar" data-color="purple" data-image="assets/img/sidebar-5.jpg">
             <div class="sidebar-wrapper">
                 <div class="logo">
-                    <a href="http://www.creative-tim.com" class="simple-text">
+                    <a href="" class="simple-text">
                         Creative Tim
                     </a>
                 </div>
                 <ul class="nav">
                     <li class="active">
-                        <a href="dashboard.html">
-                            <i class="pe-7s-graph"></i>
-                            <p>Dashboard</p>
+                        <a href="">
+                            <i class="pe-7s-users"></i>
+                            <p>Danh sách sinh viên</p>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="them_sv.php">
+                            <i class="pe-7s-add-user"></i>
+                            <p>Thêm sinh viên</p>
                         </a>
                     </li>
                 </ul>
@@ -49,7 +55,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#">Dashboard</a>
+                        <a class="navbar-brand" href="#">Danh sách sinh viên</a>
                     </div>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-left">
@@ -77,43 +83,45 @@
             }
             $result = $mysqli -> query($sql);
             ?>
-            <div>
-                <div >
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="header">
-                                <h2 class="title">Danh sách sinh viên</h2>
-                            </div>
-                            <div class="header">
-                                <p class="category">Tìm kiếm</p>
-                                <form>
-                                    <input type="text" value="<?=$search?>" name="search">
-                                    <input type="submit" name="timkiem" value="tìm kiếm">
-                                </form>
-                            </div>
-                            <div class="content table-responsive table-full-width">
-                                <table class="table table-hover table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>STT</th>
-                                            <th>Mã sinh viên</th>
-                                            <th>Họ tên</th>
-                                            <th>Email</th>
-                                            <th>Chức năng</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php $i=0; while( $item = $result->fetch_assoc() ) { $i++;?>
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="header">
+                                    <h2 class="title">Danh sách sinh viên</h2>
+                                </div>
+                                <div class="header">
+                                    <p class="category">Tìm kiếm</p>
+                                    <form>
+                                        <input type="text" value="<?=$search?>" name="search">
+                                        <input type="submit" name="timkiem" value="tìm kiếm">
+                                    </form>
+                                </div>
+                                <div class="content table-responsive table-full-width">
+                                    <table class="table table-hover table-striped">
+                                        <thead>
                                             <tr>
-                                                <td><?= $i ?></td>
-                                                <td><?= $item['code'] ?></td>
-                                                <td><?= $item['first_name'] ?></td>
-                                                <td><?= $item['email'] ?></td>
-                                                <td><a href="#">Sửa</a> | <a href="#">Xóa</a></td>
+                                                <th>STT</th>
+                                                <th>Mã sinh viên</th>
+                                                <th>Họ tên</th>
+                                                <th>Email</th>
+                                                <th>Chức năng</th>
                                             </tr>
-                                        <?php }?>
-                                    </tbody>
-                                </table>
+                                        </thead>
+                                        <tbody>
+                                            <?php $i=0; while( $item = $result->fetch_assoc() ) { $i++;?>
+                                                <tr>
+                                                    <td><?= $i ?></td>
+                                                    <td><?= $item['code'] ?></td>
+                                                    <td><?= $item['first_name'] ?></td>
+                                                    <td><?= $item['email'] ?></td>
+                                                    <td><a href="">Sửa</a> | <a href="">Xóa</a></td>
+                                                </tr>
+                                            <?php }?>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
