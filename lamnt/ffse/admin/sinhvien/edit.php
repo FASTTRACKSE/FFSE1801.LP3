@@ -1,5 +1,9 @@
 <?php 
 	require "../../templates/backend/header.php";
+
+    $mysqli = new mysqli("localhost","root","","ffse1701");
+    $mysqli->set_charset("utf8");
+    
 	$sql = "SELECT * FROM lms_countries";
 	$result = $mysqli->query($sql);
 	$result1=$mysqli->query($sql);

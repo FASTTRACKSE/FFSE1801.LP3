@@ -1,35 +1,46 @@
 <?php 
-	require "../../templates/backend/header.php";
-	$sql = "SELECT * FROM lms_countries";
-	$result = $mysqli->query($sql);
-	$result1=$mysqli->query($sql);
-
-	if(isset($_POST['create'])){
-		$code= $_POST['code'];
-		$name=$_POST['first_name'];
-		$email = $_POST['email'];
-		$street=$_POST['street'];
-		$nationality=$_POST['nationality'];
-		$country=$_POST['country'];
-		$sql = "INSERT INTO lms_students(code,first_name,email,street,nationality,country)
-						VALUES('$code','$name','$email','$street',$nationality,$country)
-						";
-		$rs=$mysqli->query($sql);
-		if($rs==true){
-			$_SESSION['msg']="Them thanh cong";
-			header("location: index.php");
-		}else{
-			$_SESSION['msg']="Them that bai, vui long lien he 0905870000";
-			header("location: index.php");
-		}
-
-	}
+		require "../../templates/backend/header.php";
 ?>
 	<div id="page-wrapper">
 		<div class="row">
 			<div class="col-lg-12">
 				<h1 class="page-header">
+<?php 
+	if(isset($_POST['create'])){
+        require "../../Libraries/My_model.php";
+        $model= new My_model();
+        $model->table="lms_students";
+        
+		$code= $_POST['code'];
+		$name=$_POST['first_name'];
+		$email = $_POST['email'];
+		$street=$_POST['street'];
+		
+        $data= array(
+            'code'=>$code,
+            'first_name'=>$name,
+            'email'=>$email,
+            'street'=>$street,
 
+        );
+       
+        $rs = $model->add($data);
+        
+		if($rs==true){
+			$_SESSION['msg']="Them thanh cong";
+
+			header("Location: http://localhost/FFSE1801.LP3/lamnt/ffse/admin/sinhvien/index.php");
+			
+		}else{
+			$_SESSION['msg']="Them that bai, vui long lien he 0905870000";
+
+			header("Location: http://localhost/FFSE1801.LP3/lamnt/ffse/admin/sinhvien/index.php");
+
+
+		}
+
+	}
+?>
 			Them moi sinh vien</h1>
 			</div>
 		</div>
@@ -62,30 +73,7 @@
                                         <label>Dia chi</label>
                                         <input name="street" class="form-control">
                                     </div>
-                                    <div class="form-group col-lg-6">
-                                    	<label>Quoc tich</label>
-                                    	<select class="form-control" name="nationality">
-                                    		<?php 
-                                    				while($item=$result->fetch_assoc()){
-                                  			?>
-                                    					<option value="<?=$item['id']?>"><?=$item['name']?></option>
-                                    		<?php
-                                    			 }
-                                    		?>
-                                    	</select>
-                                    </div>
-                                    <div class="form-group col-lg-6">
-                                    	<label>Quoc gia</label>
-                                    	<select class="form-control" name="country">
-                                    		<?php 
-                                    				while($item=$result1->fetch_assoc()){
-                                  			?>
-                                    					<option value="<?=$item['id']?>"><?=$item['name']?></option>
-                                    		<?php
-                                    			 }
-                                    		?>
-                                    	</select>
-                                    </div>
+                                    
                                     <button name="create" type="submit" class="btn btn-success">Tao moi</button>
                                 </form>
                             </div>

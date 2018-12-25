@@ -1,17 +1,15 @@
 <?php 
-	require "../../templates/backend/header.php";
+	// require "../../templates/backend/header.php";
+    require "../../Libraries/My_model.php";
 ?>
 <?php 
-
-	$sql = "SELECT * FROM lms_students";
-	$search=""; 
-	if(isset($_GET['timkiem'])){
-		$search = $_GET['search'];
-		$sql = "SELECT * FROM lms_students
-				WHERE first_name LIKE '%{$search}'";
-	}
-
-	$result=$mysqli->query($sql);
+   $model= new My_model();
+   $model->table="lms_marks";
+   $arSV= $model->get_all();
+   echo "<pre>";
+   print_r($arSV);
+   echo "</pre>";
+   die();
 ?>
 <div id="page-wrapper">
 	<div class="row">
