@@ -1,6 +1,6 @@
 *{
-	padding: 0px;
-	margin: 0px;
+	padding: 0;
+	margin: 0;
 	box-sizing: border-box;
 }
 html, body {
@@ -10,12 +10,66 @@ body {
 	width: 100%;
 	background: #626262;
 	overflow: hidden;
-	font-family: 'Electrolize', Arial, sans-serif;
 	font-weight: 400;
 	font-size: 15px;
 	color: #fff;
+	background-image: url(../img/nen.png);
+	background-size: cover;
+}
+.ctner {
+	width: 100%;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+@media (min-width: 576px) {
+	.ctner {
+		max-width: 540px;
+	}
+}
+
+@media (min-width: 768px) {
+	.ctner {
+		max-width: 720px;
+	}
+}
+
+@media (min-width: 992px) {
+	.ctner {
+		max-width: 960px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.ctner {
+		max-width: 1010px;
+	}
+}
+@font-face {
+	font-family: Play-R;
+	src: url(../font/Play-Regular.ttf);
+}
+@font-face {
+	font-family: Brush-Up;
+	src: url(../font/iCiel Brush Up.ttf);
+}
+a{
+	text-decoration: none;
+}
+.home{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.4);
+	text-align: center;
+	font-family: Brush-Up;
+}
+.home h1{
+	padding-top: 25%;
 }
 .menu{
+	font-family: Play-R;
 	position: absolute;
 	z-index: 2000;
 	background-color: #181818;
@@ -35,7 +89,6 @@ body {
 	display: block;
 }
 .menu ul li a{
-	text-decoration: none;
 	color: #a9a9a9;
 }
 .menu ul li a img{
@@ -80,6 +133,23 @@ body {
 .menu ul li a:hover .menu1{
 	opacity: 1;
 	left: 117%;
+}
+.menu ul li:nth-child(8){
+	padding-top: 460%;
+}
+.menu ul li:nth-child(9),li:nth-child(10),li:nth-child(11){
+	padding-top: 20%;
+}
+.mxh{
+	text-align: center;
+	color: #fff;
+	font-size: 150%;
+}
+.mxh:hover {
+	color: #00ccff !important;
+}
+.mxh span{
+	padding-top: 20%;
 }
 .panel{
 	min-width: 100%;
