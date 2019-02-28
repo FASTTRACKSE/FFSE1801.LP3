@@ -1,0 +1,14 @@
+@font-face {
+ 	font-family: comfortaa;
+ 	src: url(../../front_end/fonts/Comfortaa-Bold.ttf);
+}
+.tang h4{
+	font-family: comfortaa;
+}
+.tang img{
+	padding: 10%;
+}
+.tang h6{
+	color: #422200;
+	text-align: center;
+}
