@@ -18,8 +18,8 @@
     <!-- others css -->
     <link rel="stylesheet" href="../../assets/back_end/css/typography.css">
     <link rel="stylesheet" href="../../assets/back_end/css/default-css.css">
-    <link rel="stylesheet" href="../../assets/back_end/css/styles.css?v.0.0.2">
-    <link rel="stylesheet" href="../../assets/back_end/css/styles2.css?v.0.0.2">
+    <link rel="stylesheet" href="../../assets/back_end/css/styles.css?v.0.0.1">
+    <link rel="stylesheet" href="../../assets/back_end/css/styles2.css?v.0.0.1">
     <link rel="stylesheet" href="../../assets/back_end/css/responsive.css">
     <!-- modernizr css -->
     <script src="../../assets/back_end/js/vendor/modernizr-2.8.3.min.js"></script>
